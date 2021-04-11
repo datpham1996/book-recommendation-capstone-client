@@ -47,17 +47,21 @@ class Book extends React.Component {
         let { error, isLoaded, items, rank } = this.state;
         // console.log(items);
         if(error || !items[rank]) {
-            return <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+            return <div className="mainpagecontainer">
+                <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+            </div>
         }
         else if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <div className="mainpagecontainer">Loading...</div>;
         }
         else if(!rank){
-            return<button className="" onClick={this.handleGetRandomRank}>Give me the Best Seller</button>
+            return<div className="mainpagecontainer">
+                <button className="" onClick={this.handleGetRandomRank}>Give me the Best Seller</button>
+            </div>
         }
         else{
             return(
-                <div className="content">
+                <div className="content mainpagecontainer">
                     <div>
                         <button className="" onClick={this.handleGetRandomRank}>Give me the Best Seller</button>
                     </div>

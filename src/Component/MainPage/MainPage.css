@@ -1,0 +1,7 @@
+.mainpagecontainer{
+    text-align: center;
+}
+
+.mainpagecontainer > h1 {
+    font-family: cursive;
+}
