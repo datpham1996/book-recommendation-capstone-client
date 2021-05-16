@@ -52,33 +52,19 @@ class MyFavorite extends React.Component {
 
         let user_id = TokenService.getUserId();
 
-        let { spoonacular_id, recipe_name, recipe_img, selectedDietName } = data;
-        // console.log(spoonacular_id, recipe_name, recipe_img)
-        let payload = {
-            user_id: user_id,
-            spoonacular_id: spoonacular_id,
-            recipe_name: recipe_name,
-            recipe_img: recipe_img,
+        let { id } = data;
 
-        }
 
-        const dietName = selectedDietName
+        ////////////////DELETE RECIPE//////////////////////////////////////////////
 
-        // console.log(payload)
-
-        ////////////////POST RECIPE//////////////////////////////////////////////
-
-        fetch(`${config.API_ENDPOINT}/recipes`, {
-            method: 'POST',
+        fetch(`${config.API_ENDPOINT}/favorites/${id}`, {
+            method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(payload),
         })
-            .then((response) => response.json())
             .then(responseJson => {
-                // console.log("post recipe response", responseJson)
-
+                window.location = '/favorite'
             })
 
             .catch(err => {
@@ -112,7 +98,7 @@ class MyFavorite extends React.Component {
                             {favorite.is_public ? "public" : "private"}
                         </li>
                         <li>
-                            <form className="removeBookForm" onSubmit={this.removeBook}>
+                            <form className="removeBookForm" onSubmit={this.deleteBook}>
                                 <input type='hidden' name='id' defaultValue={favorite.id}>
 
                                 </input>
