@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import MainPage from './Component/MainPage/MainPage';
+import Landing from './Component/Landing/Landing'
 import Book from './Component/Book/Book';
 import Footer from './Component/Footer/Footer';
 import FormLogin from './Component/FormLogin/FormLogin';
 import FormSignUp from './Component/FormSignUp/FormSignUp';
 import NavBar from './Component/NavBar/NavBar'
+import UserFavorite from './Component/MyFavorite/MyFavorite';
+import MyFavorite from './Component/MyFavorite/MyFavorite';
 
 class App extends React.Component {
   render() {
@@ -16,7 +18,7 @@ class App extends React.Component {
           <NavBar />
           <Book/>
           <Switch>
-            {/* <Route exact path='/' component={Landing} /> */}
+            <Route exact path='/' component={Landing} />
 
             {/* <Route path='/how-it-works' component={HowItWorks} /> */}
 
@@ -24,7 +26,9 @@ class App extends React.Component {
 
             <Route path='/signup' component={FormSignUp} />
 
-            <Route path='/main' component={MainPage} />
+            <Route path='/favorite' component={MyFavorite}/>
+
+            {/* <Route path='/main' component={Landing} /> */}
 
             {/* <Route path='/book' component={Book} /> */}
 

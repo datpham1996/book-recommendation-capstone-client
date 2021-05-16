@@ -3,6 +3,7 @@ import TokenService from "../services/token-service.js"
 import { Link } from 'react-router-dom'
 
 
+
 class NavBar extends Component {
 
     logOutClick = () => {
@@ -25,14 +26,20 @@ class NavBar extends Component {
                         <ul className='link'>
                             <li>
                                 <Link to="/">
-                                    <i className="fa fa-home"></i>
+                                    <i className="fas fa-sign-in-alt"></i>
                                     <span className='navlink-text'>Home</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/main">
-                                    <i className="fa fa-list"></i>
+                                    <i className="fas fa-user-plus"></i>
                                     <span className='navlink-text'>Daily Book recommendation</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/favorite">
+                                    <i className="fas fa-users"></i>
+                                    <span className='navlink-text'>My Favorite</span>
                                 </Link>
                             </li>
                             <li>
@@ -41,6 +48,7 @@ class NavBar extends Component {
                                     <span className='navlink-text'>Log Out</span>
                                 </Link>
                             </li>
+                
                         </ul>
                     </nav>
                     : 
@@ -48,16 +56,17 @@ class NavBar extends Component {
                         <ul className='link'>
                             <li>
                                 <Link to="/login">
-                                    <i className="fa fa-home"></i>
+                                    <i className="fas fa-sign-in-alt"></i>
                                     <span className='navlink-text'>Login</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/signup">
-                                    <i className="fa fa-list"></i>
+                                    <i className="fas fa-user-plus"></i>
                                     <span className='navlink-text'>Signup</span>
                                 </Link>
                             </li>
+
                             {/* <li>
                                 <Link to="/" onClick={this.logOutClick}>
                                     <i className="fa fa-sign-out"></i>

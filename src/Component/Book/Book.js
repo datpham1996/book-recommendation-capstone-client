@@ -1,6 +1,6 @@
 import React from 'react';
 import config from '../../config';
-import './Book.css';
+
 
 class Book extends React.Component {
     constructor(props) {
@@ -59,7 +59,7 @@ class Book extends React.Component {
                 <button className="" onClick={this.handleGetRandomRank}>Give me the Best Seller</button>
             </div>
         }
-        else{
+        else {
             return(
                 <div className="content mainpagecontainer">
                     <div>

@@ -66,12 +66,20 @@ Register Page
 
 
 ### 7. Back-end Structure - Business Objects (to do later)
-* (Example) Users (database table)
+*  Users (database table)
     * id (auto-generated)
     * username (email validation)
     * password (at least 8 chars, at least one alpha and a special character validation)
 
-
+*  Favorites (database table)
+    * id (auto-generated)
+    * user_id (foreign key to users table)
+    * book_title (varchar 255)
+    * book_author (varchar 255)
+    * book_image (varchar 255)
+    * book_description (text)
+    * is_public (boolean default false)
+    
 
 ### 8. API Documentation (to do later)
 #### API Overview
